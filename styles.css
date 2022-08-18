@@ -1,0 +1,19 @@
+/* reset  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #5cb9ed;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  padding: 2rem;
+}
