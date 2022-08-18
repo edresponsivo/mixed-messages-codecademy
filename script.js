@@ -98,16 +98,16 @@ const luckyNumberArr = Array(100)
 // create a function gets a random number
 const randIndexOf = function (arr) {
   let rndIndx = Math.floor(Math.random() * arr.length);
-  console.log(rndIndx);
   return arr[rndIndx];
 };
-
 
 // Create one function that gets the random element from: quotes, foods and lucky number
 function getMyMessages(qtArr, foodArr, lckyNumArr) {
   let quote = randIndexOf(qtArr);
   let food = randIndexOf(foodArr);
   let luckyNumber = randIndexOf(lckyNumArr);
+
+  // Set an ES6 Template literal with each element randomly picked.
   const output = `Keep in mind: \n"${quote.quote}" \n\t${quote.author} \nTry something new: ${food} \nAnd your lucky number is: ${luckyNumber}`;
   return output;
 }
