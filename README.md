@@ -2,7 +2,7 @@
 
 ## Keep in mind
 
-Purpose of 'Keep in Mind' is to press the button and will generate a quote to keep in mind during day or the journey, also a suggestion to try something new, for now I am suggesting 'food', will implement different categories, on late versions, and also will give you your 'Lucky number'.
+The Purpose of 'Keep in Mind Developers' is to give an inspiration quote to the developers group, when the button is pressed it will generate a quote to keep in mind during day or the journey, or hopefully inspire you, also a suggestion to try something new, for now I am suggesting 'food', will implement different categories, on later versions, and also will give you your 'Lucky number'.
 
 ### Technology apply:
 

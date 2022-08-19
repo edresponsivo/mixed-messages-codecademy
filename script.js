@@ -1,6 +1,5 @@
 // setup the topic into arrays for now are being manually added to the arrays.
 // topic: quotes, reference from https://dzone.com/articles/best-programming-jokes-amp-quotes
-// topic: food,
 // TODO: eventually will get the quotes, and food from an API
 const quotes = [
   {
@@ -59,6 +58,7 @@ const quotes = [
   { quote: 'Make it work, make it right, make it fast.', author: 'Kent Beck' },
 ];
 
+// topic: food,
 const foods = [
   'Apple pie',
   'Avocado Toast',
@@ -91,6 +91,7 @@ const foods = [
   'Philly Cheese Steak',
 ];
 
+// Create an array with numbers taking advantage of the fill() and the map() methods.
 const luckyNumberArr = Array(100)
   .fill(1)
   .map((n, i) => n + i);
@@ -117,12 +118,15 @@ function getMyMessages(qtArr, foodArr, lckyNumArr) {
 // console.log(getMyMessages(quotes, foods, luckyNumberArr));
 
 // To connect the html with Javascript we need to connect some DOM elements
-// Using 'querySelector' and using the class of the element.
+// Using 'querySelector' with the class as parameter to select the element.
 const button = document.querySelector('.btn');
 const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
 const food = document.querySelector('.food');
 const number = document.querySelector('.number');
+const qContainer = document.querySelector('.q-container');
+const fContainer = document.querySelector('.f-container');
+const lnContainer = document.querySelector('.ln-container');
 
 // Set the button an eventListener when the user click it should call our function
 button.addEventListener('click', getQuotes);
@@ -135,4 +139,13 @@ function getQuotes() {
   author.textContent = quotePicked.author;
   food.textContent = randomElementOf(foods);
   number.textContent = randomElementOf(luckyNumberArr);
+  // Show all initially hidden elements
+  removeHidden(qContainer, lnContainer, fContainer);
+}
+
+// Function to remove the 'hidden' class.
+function removeHidden() {
+  for (let i = 0; i < arguments.length; i++) {
+    arguments[i].classList.remove('hidden');
+  }
 }

@@ -46,8 +46,10 @@ main {
 }
 .quote {
   font-size: 2.2rem;
+  letter-spacing: 0.2rem;
 }
 .author {
+  font-size: 1.6rem;
   font-style: italic;
   font-weight: bold;
   text-align: end;
@@ -77,4 +79,9 @@ main {
 .btn:hover {
   background-color: #34a3e4;
   color: rgb(226, 222, 222);
+}
+
+/* testing to hide elements */
+.hidden {
+    display: none;
 }
