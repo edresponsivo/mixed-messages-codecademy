@@ -96,20 +96,43 @@ const luckyNumberArr = Array(100)
   .map((n, i) => n + i);
 
 // create a function gets a random number
-const randIndexOf = function (arr) {
+const randomElementOf = function (arr) {
   let rndIndx = Math.floor(Math.random() * arr.length);
   return arr[rndIndx];
 };
 
 // Create one function that gets the random element from: quotes, foods and lucky number
+// and Displays in the console
 function getMyMessages(qtArr, foodArr, lckyNumArr) {
-  let quote = randIndexOf(qtArr);
-  let food = randIndexOf(foodArr);
-  let luckyNumber = randIndexOf(lckyNumArr);
+  let quote = randomElementOf(qtArr);
+  let food = randomElementOf(foodArr);
+  let luckyNumber = randomElementOf(lckyNumArr);
 
   // Set an ES6 Template literal with each element randomly picked.
   const output = `Keep in mind: \n"${quote.quote}" \n\t${quote.author} \nTry something new: ${food} \nAnd your lucky number is: ${luckyNumber}`;
   return output;
 }
 
-console.log(getMyMessages(quotes, foods, luckyNumberArr));
+// This is the first interaction of the program: display in the console.
+// console.log(getMyMessages(quotes, foods, luckyNumberArr));
+
+// To connect the html with Javascript we need to connect some DOM elements
+// Using 'querySelector' and using the class of the element.
+const button = document.querySelector('.btn');
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
+const food = document.querySelector('.food');
+const number = document.querySelector('.number');
+
+// Set the button an eventListener when the user click it should call our function
+button.addEventListener('click', getQuotes);
+// test the button trigger the getMyMessages function
+
+// Create a function that gets the random elements and set the UI elements
+function getQuotes() {
+  const quotePicked = randomElementOf(quotes);
+  quote.textContent = quotePicked.quote;
+  author.textContent = quotePicked.author;
+  food.textContent = randomElementOf(foods);
+  number.textContent = randomElementOf(luckyNumberArr);
+}
